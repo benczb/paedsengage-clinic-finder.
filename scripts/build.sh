@@ -1,18 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
-
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-APP_ROOT="$ROOT/paedsengage-clinic-finder"
-ROOT_DIST="$ROOT/dist"
-
-if [ ! -f "$APP_ROOT/scripts/build.sh" ]; then
-  echo "Nested app build script not found: $APP_ROOT/scripts/build.sh" >&2
-  exit 1
-fi
-
-bash "$APP_ROOT/scripts/build.sh"
-rm -rf "$ROOT_DIST"
-mkdir -p "$ROOT_DIST"
-cp -a "$APP_ROOT/dist/." "$ROOT_DIST/"
-
-echo "Built PaedsEngage app to $ROOT_DIST"
+DIST="$ROOT/dist"
+rm -rf "$DIST"
+mkdir -p "$DIST/data"
+cp "$ROOT/index.html" "$ROOT/app.js" "$ROOT/styles.css" "$DIST/"
+cp "$ROOT/data/clinics.json" "$DIST/data/clinics.json"
+cat > "$DIST/config.js" <<CONFIG
+window.PAEDSENGAGE_CONFIG = {
+  googleMapsApiKey: "${GOOGLE_MAPS_API_KEY:-REPLACE_WITH_GOOGLE_MAPS_API_KEY}",
+  sourceLabel: "Participating PaedsENGAGE Clinics PDF (accurate as of 22 Jun 2026)",
+  dataUrl: "./data/clinics.json",
+};
+CONFIG

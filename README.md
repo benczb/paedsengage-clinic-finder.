@@ -20,21 +20,16 @@ The clinic finder provides:
 
 ```text
 .
-├── README.md
-├── LICENSE
-├── .gitignore
+├── index.html
+├── app.js
+├── styles.css
+├── config.js
+├── data/
+│   └── clinics.json
 ├── docs/
 │   └── cloudflare-pages.md
-├── scripts/
-│   └── build.sh
-└── site/
-    ├── index.html
-    ├── app.js
-    ├── styles.css
-    ├── config.js
-    └── data/
-        ├── clinics.json
-        └── clinics.csv
+└── scripts/
+    └── build.sh
 ```
 
 ## Data source
@@ -48,7 +43,6 @@ Always verify clinic availability, doctor schedules, and opening hours directly 
 Because the site fetches JSON data, use a local web server instead of opening `index.html` directly.
 
 ```bash
-cd site
 python3 -m http.server 8000
 ```
 
@@ -60,7 +54,7 @@ http://localhost:8000
 
 ## Google Maps API key
 
-`site/config.js` contains a placeholder key by default:
+`config.js` contains a placeholder key by default:
 
 ```js
 googleMapsApiKey: "REPLACE_WITH_GOOGLE_MAPS_API_KEY"
@@ -93,12 +87,12 @@ Recommended Cloudflare Pages settings:
 
 ```text
 Framework preset: None
-Build command: bash scripts/build.sh
-Build output directory: dist
+Build command: leave blank
+Build output directory: / or .
 Production branch: main
 ```
 
-The build script copies the `site/` folder into `dist/` and injects the `GOOGLE_MAPS_API_KEY` environment variable into `dist/config.js`.
+The repository root is directly deployable. If Cloudflare requires a build output directory, use `bash scripts/build.sh` with output directory `dist`.
 
 See also:
 
@@ -152,7 +146,3 @@ If the uploaded GitHub repository is wrong, delete the repository or replace the
 
 MIT License.
 
-
-## Root-level static files
-
-The app source lives under `paedsengage-clinic-finder/`. The repository root also mirrors the built static files (`index.html`, `app.js`, `styles.css`, `config.js`, `data/`) and includes `scripts/build.sh` so Cloudflare Pages works whether it is configured to publish the repo root, root `dist/`, or the nested app `dist/` directory.
