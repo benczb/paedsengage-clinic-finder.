@@ -39,6 +39,15 @@ window.initPaedsEngageMap = async function initPaedsEngageMap() {
     });
     state.geocoder = new google.maps.Geocoder();
     state.infoWindow = new google.maps.InfoWindow();
+    renderMap();
+  } catch (error) {
+    console.error(error);
+    els.mapStatus.textContent = "Unable to enable the map. Clinic search is still available below.";
+  }
+};
+
+(async function bootstrap() {
+  try {
     await loadClinics();
     wireEvents();
     populateLocationFilter();
@@ -47,20 +56,22 @@ window.initPaedsEngageMap = async function initPaedsEngageMap() {
     console.error(error);
     els.mapStatus.textContent = "Unable to load clinic data.";
     els.results.innerHTML = `<div class="empty-state">Failed to load clinic data. Check the browser console for details.</div>`;
-  }
-};
-
-(async function bootstrap() {
-  const apiKey = window.PAEDSENGAGE_CONFIG?.googleMapsApiKey;
-  if (!apiKey || apiKey === "REPLACE_WITH_GOOGLE_MAPS_API_KEY") {
-    els.mapStatus.textContent = "Add your Google Maps API key in config.js to enable the map.";
-    els.results.innerHTML = `<div class="empty-state">Google Maps API key is missing. Add it in <code>config.js</code> and reload.</div>`;
     return;
   }
+
+  const apiKey = window.PAEDSENGAGE_CONFIG?.googleMapsApiKey;
+  if (!apiKey || apiKey.startsWith("REPLACE_")) {
+    els.mapStatus.textContent = "Map is disabled because the Google Maps API key is not configured. Clinic search and results are available below.";
+    return;
+  }
+
   const script = document.createElement("script");
   script.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(apiKey)}&callback=window.initPaedsEngageMap`;
   script.async = true;
   script.defer = true;
+  script.onerror = () => {
+    els.mapStatus.textContent = "Unable to load Google Maps. Clinic search and results are available below.";
+  };
   document.head.appendChild(script);
 })();
 
