@@ -52,6 +52,32 @@ Then open:
 http://localhost:8000
 ```
 
+
+## Updating clinic data from a PDF
+
+The repository includes the PaedsENGAGE PDF parser under:
+
+```text
+scripts/parse_paedsengage_pdf.py
+```
+
+Install parser dependencies in a virtual environment:
+
+```bash
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements-parser.txt
+```
+
+Run the parser against a downloaded KKH PaedsENGAGE PDF:
+
+```bash
+.venv/bin/python scripts/parse_paedsengage_pdf.py \
+  --pdf data/current-kkh-paedsengage.pdf \
+  --out-dir data
+```
+
+Then validate and deploy through the normal GitHub/Cloudflare flow. Field definitions are documented in `docs/parser-output-schema.md`.
+
 ## Google Maps API key
 
 `config.js` contains a placeholder key by default:
