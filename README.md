@@ -39,7 +39,7 @@ The clinic finder provides:
 
 ## Data source
 
-Clinic data is derived from the official Participating PaedsENGAGE Clinics PDF marked accurate as of 13 April 2026.
+Clinic data is derived from the official Participating PaedsENGAGE Clinics PDF marked accurate as of 22 Jun 2026.
 
 Always verify clinic availability, doctor schedules, and opening hours directly with the clinic before visiting.
 
@@ -151,3 +151,8 @@ If the uploaded GitHub repository is wrong, delete the repository or replace the
 ## License
 
 MIT License.
+
+
+## Root-level static files
+
+The app source lives under `paedsengage-clinic-finder/`. The repository root also mirrors the built static files (`index.html`, `app.js`, `styles.css`, `config.js`, `data/`) and includes `scripts/build.sh` so Cloudflare Pages works whether it is configured to publish the repo root, root `dist/`, or the nested app `dist/` directory.
