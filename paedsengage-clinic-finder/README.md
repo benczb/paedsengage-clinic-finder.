@@ -24,7 +24,7 @@ The site lets users search by area, clinic, address, doctor, opening day/time, a
 
 ## Data source
 
-Clinic data is derived from the official Participating PaedsENGAGE Clinics PDF marked accurate as of 13 April 2026.
+Clinic data is derived from the official Participating PaedsENGAGE Clinics PDF marked accurate as of 22 Jun 2026.
 
 Always verify clinic availability, doctor schedules, and opening hours directly with the clinic before visiting.
 
