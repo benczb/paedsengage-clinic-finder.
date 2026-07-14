@@ -1,0 +1,41 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #333; background: #f5f7fa; }
+.navbar { background: #4a90d9; color: white; padding: 0.75rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+.nav-brand { font-size: 1.1rem; font-weight: 600; }
+.nav-links a { color: white; text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; }
+.hero { background: linear-gradient(135deg, #4a90d9 0%, #357abd 100%); color: white; padding: 3rem 2rem; text-align: center; }
+.hero h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+.hero p { font-size: 1rem; opacity: 0.9; }
+.accuracy-note { font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.8; }
+.disclaimer { font-size: 0.8rem; margin-top: 0.75rem; opacity: 0.7; font-style: italic; }
+.search-section { padding: 1.5rem 2rem; background: white; border-bottom: 1px solid #e1e5eb; }
+.search-container { display: flex; gap: 0.75rem; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; }
+#searchInput { flex: 1; min-width: 200px; padding: 0.6rem 1rem; border: 1px solid #d0d5dd; border-radius: 6px; font-size: 0.95rem; }
+#locationFilter, #dayFilter { padding: 0.6rem 1rem; border: 1px solid #d0d5dd; border-radius: 6px; font-size: 0.95rem; background: white; }
+.summary-section { padding: 1rem 2rem; background: #e8f0fe; text-align: center; }
+.summary-section p { font-size: 0.9rem; color: #4a5568; }
+.map-section { padding: 1rem 2rem; text-align: center; }
+#map-container { width: 100%; height: 350px; border-radius: 8px; background: #e5e7eb; margin: 0.5rem 0; }
+.list-section { padding: 1rem 2rem; max-width: 1200px; margin: 0 auto; }
+.clinic-list { display: grid; gap: 0.75rem; }
+.clinic-card { background: white; border-radius: 8px; padding: 1rem 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.08); border-left: 4px solid #4a90d9; }
+.clinic-card h3 { font-size: 1rem; color: #1a365d; margin-bottom: 0.25rem; }
+.clinic-card .location { font-size: 0.85rem; color: #4a90d9; font-weight: 500; margin-bottom: 0.25rem; }
+.clinic-card .address { font-size: 0.85rem; color: #6b7280; margin-bottom: 0.25rem; }
+.clinic-card .phone { font-size: 0.85rem; color: #374151; }
+.clinic-card .phone a { color: #4a90d9; text-decoration: none; }
+.clinic-card .hours { font-size: 0.8rem; color: #6b7280; margin-top: 0.25rem; }
+.clinic-card .doctors { font-size: 0.8rem; color: #6b7280; margin-top: 0.15rem; }
+.clinic-card .maps-link { font-size: 0.8rem; color: #4a90d9; margin-top: 0.25rem; }
+.clinic-card .maps-link a { color: #4a90d9; text-decoration: none; }
+.clinic-card .maps-link a:hover { text-decoration: underline; }
+footer { background: #1a365d; color: #d0d5dd; text-align: center; padding: 1.5rem; font-size: 0.85rem; margin-top: 2rem; }
+footer a { color: #93c5fd; }
+.no-results { text-align: center; padding: 2rem; color: #6b7280; }
+@media (max-width: 768px) {
+  .hero { padding: 2rem 1rem; }
+  .hero h1 { font-size: 1.5rem; }
+  .search-section, .list-section { padding: 1rem; }
+  .search-container { flex-direction: column; }
+  #searchInput, #locationFilter, #dayFilter { min-width: unset; }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PaedsENGAGE Clinic Finder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <span class="nav-brand">PaedsENGAGE Clinic Finder</span>
+    <div class="nav-links">
+      <a href="#search">Search</a>
+      <a href="#summary">Summary</a>
+      <a href="#list">List</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>PaedsENGAGE Clinic Finder</h1>
+    <p>Find participating paediatric clinics in Singapore</p>
+    <p class="accuracy-note">Data accurate as of 27 April 2026 · Source: KKH PaedsENGAGE</p>
+    <p class="disclaimer">This site is for reference only and the clinic data has been fully parsed by AI.</p>
+  </header>
+
+  <section id="search" class="search-section">
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search by clinic name, location, or doctor...">
+      <select id="locationFilter">
+        <option value="">All Locations</option>
+      </select>
+      <select id="dayFilter">
+        <option value="">All Days</option>
+        <option value="Mon">Monday</option>
+        <option value="Tues">Tuesday</option>
+        <option value="Wed">Wednesday</option>
+        <option value="Thurs">Thursday</option>
+        <option value="Fri">Friday</option>
+        <option value="Sat">Saturday</option>
+        <option value="Sun">Sunday</option>
+      </select>
+    </div>
+  </section>
+
+  <div id="summary" class="summary-section"></div>
+
+  <div id="map-container" class="map-section"></div>
+
+  <section id="list" class="list-section">
+    <div id="clinicList" class="clinic-list"></div>
+  </section>
+
+  <footer>
+    <p>Source: <a href="https://www.kkh.com.sg/content/dam/singhealth-web/kkh/imported-assets/assets/documents/PaedsENGAGE-Clinics.pdf" target="_blank">KKH PaedsENGAGE PDF</a></p>
+    <p>This site is for reference only and the clinic data has been fully parsed by AI.</p>
+    <p>For urgent medical concerns, please contact the nearest clinic or A&E.</p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
