@@ -1007,6 +1007,13 @@
   Hours: Sat: 9:30am - 1:00pm
   Hours: Closed on Sun & PH
 
+[Bukit Timah] Oaklife Family Clinic (Upper Bukit Timah) **Opening on 27 Jul 2026
+  Address: 182 Jalan Jurong Kechil, #01-65, The Hillford, Singapore 596152
+  Contact: 80967388
+  Hours: Mon - Fri: 8:30am - 1:00pm 2:30pm - 8:30pm
+  Hours: Sun: 5:00pm - 8:30pm
+  Hours: Closed on Sat & PH
+
 [Bukit Timah] Our Bukit Timah
   Address: 896 Dunearn Road
   Contact: 65303713
@@ -1810,6 +1817,13 @@
   Hours: Wed, Sat & Sun: 9:00am - 12:30pm
   Hours: Closed on PH
 
+[Jurong West] Icon Medical Clinic
+  Address: 517 Jurong West, Street 52, #01-101, Singapore 640517
+  Contact: 65600521
+  Hours: Mon - Fri: 8:30am - 1:00pm 6:00pm - 9:00pm
+  Hours: Sat & Sun: 8:30am - 12:00pm
+  Hours: Closed on PH
+
 [Jurong West] The Family Wellness Clinic
   Address: 498 Jurong West, Street 41, #01-482, Singapore 640498
   Contact: 68939181
@@ -1938,6 +1952,12 @@
   Hours: Tues, Thurs & Fri: 8:30am - 3:00pm
   Hours: Sat: 8:30am - 1:00pm
   Hours: Closed on Sun & PH
+
+[Kallang] Keystone Clinic 18 & Surgery (Boon Keng)
+  Address: Upper Boon Keng, Road, #01-1157, Boon Keng Ville, Singapore 380018
+  Contact: 80773901
+  Hours: Mon - Sun: 8:00am - 8:00pm
+  Hours: PH: 8:00am - 8:00pm
 
 [Kallang] Kindred Family 63 Clinic (Kallang Bahru)
   Address: Kallang Bahru, #01-435, Kallang Bahru Ville, Singapore 330063
@@ -2224,7 +2244,7 @@
   Hours: Sun: 7:30am - 12:00pm
   Hours: Closed on PH
 
-[Marine Parade] Mediline Wei 81 Min Clinic (Marine Parade)
+[Marine Parade] 81 Mediline Wei Min Clinic (Marine Parade)
   Address: Marine Parade, Central, #01-634, Singapore 440081
   Contact: 83803177
   Hours: Mon - Thurs: 8:00am - 2:00pm 3:00pm - 8:00pm
@@ -2463,8 +2483,7 @@
 [Punggol] Etern Medical 70 Clinic
   Address: Punggol Central, #01-05, Singapore 828868
   Contact: 64259935 / 92300452
-  Hours: Mon - Fri: 8:30am - 1:00pm 2:00pm - 5:00pm (WhatsApp 6:30pm - 9:30pm Only)
-  Hours: Sat & Sun: 8:30am - 1:00pm
+  Hours: Mon - Fri: 8:30am - 1:00pm 2:00pm - 5:00pm 6:30pm - 9:30pm (WhatsApp Only) Sat & Sun: 8:30am - 1:00pm
   Hours: PH: 8:30am - 1:00pm
 
 [Punggol] Healthmark Family Clinic (Punggol)
@@ -2475,14 +2494,18 @@
   Hours: Sat: 8:30am - 1:00pm
   Hours: Closed on Sun & PH
 
-[Punggol] Kenneth Tan Medical Clinic Northeast Medical Group (Punggol)
-  Address: 658 Punggol East, #01-04, Singapore 820658, 653A Punggol Drive, #01-05, Singapore 821653
-  Contact: 63124589 / 63203775
+[Punggol] Kenneth Tan Medical Clinic
+  Address: 658 Punggol East, #01-04, Singapore 820658
+  Contact: 63124589
   Hours: Mon, Tues & 9:00am - 1:00pm
   Hours: Fri: 3:00pm - 8:00pm
   Hours: Wed & Thurs: 9:00am - 1:00pm 3:00pm - 6:00pm
   Hours: Sat: 9:00am - 1:00pm
   Hours: Closed on Sun & PH
+
+[Punggol] Northeast Medical Group (Punggol)
+  Address: 653A Punggol Drive, #01-05, Singapore 821653
+  Contact: 63203775
   Hours: Mon - Fri: 9:00am - 1:00pm 2:00pm - 6:00pm
   Hours: Sat: 9:00am - 1:00pm
   Hours: Closed on Sun & PH
@@ -2513,6 +2536,14 @@
   Contact: 65133092
   Hours: Mon - Fri: 8:00am - 2:00pm 6:00pm - 9:00pm
   Hours: Sat & Sun: 8:00am - 12:00pm
+  Hours: PH: To call the clinic to confirm
+
+[Punggol] OneCare Clinic (Punggol Coast MRT)
+  Address: 101 New Punggol Road, #B1-01, Punggol Coast MRT, Singapore 828604
+  Contact: 64202571
+  Hours: Mon - Thurs: 8:00am - 2:00pm 5:30pm - 9:00pm
+  Hours: Fri: 8:00am - 2:00pm
+  Hours: Sat & Sun: 9:00am - 1:00pm
   Hours: PH: To call the clinic to confirm
 
 [Punggol] OneDoctors 83 Family Clinic (Punggol)
@@ -3147,16 +3178,10 @@
   Hours: Mon - Fri: 9:00am - 12:30pm 1:30pm - 5:00pm
   Hours: Closed on Sat, Sun & PH
 
-[Tanjong Pagar] Beacon Medical
-  Address: 7 Tanjong Pagar Plaza
-  Contact: 65922739
-  Hours: Mon - Fri: 8:30am - 12:00pm
-
-[Tanjong Pagar] Clinic Tanjong Pagar
-  Address: #02-103, Singapore, 081007
-  Contact: 93697878
-  Hours: 1:00pm - 5:00pm (WhatsApp Only) Sat: 8:30am - 1:00pm
-  Hours: Closed on Sun & PH
+[Tanjong Pagar] Beacon Medical Clinic Tanjong Pagar
+  Address: 7 Tanjong Pagar Plaza, #02-103, Singapore, 081007
+  Contact: 65922739 / 93697878
+  Hours: Mon - Fri: 8:30am - 12:00pm 1:00pm - 5:00pm (WhatsApp Sat: 8:30am - 1:00pm Only) Closed on Sun & PH
 
 [Tanjong Pagar] Bridgepoint Health
   Address: 1 Everton Park
@@ -3465,7 +3490,7 @@
   Hours: Sat: 8:30am - 12:00pm
   Hours: Closed on Sun & PH
 
-[Toa Payoh] Joyce & 178 Partners Family Clinic
+[Toa Payoh] 178 Joyce & Partners Family Clinic
   Address: Toa Payoh Central, #01-224, Singapore 310178
   Contact: 68023507
   Hours: Mon - Thurs: 8:30am - 1:00pm 6:00pm - 8:30pm
@@ -3548,11 +3573,11 @@
   Hours: Sat: 8:30am - 1:00pm
   Hours: Closed on PH
 
-[Thomson] 24-Hr Family Clinic, Thomson Medical Centre
-  Address: 339 Thomson Road, Singapore 307677
-  Contact: 63508812
-  Hours: Mon- Sun: 12:00am - 12:00am
-  Hours: PH: 12:00am - 12:00am
+[Thomson] Springleaf Medical
+  Address: 908D Upper Thomson, Road, Singapore 787111
+  Contact: 60190579
+  Hours: Mon - Fri: 8:30am - 12:30pm 2:00pm - 5:30pm
+  Hours: Closed on Sat, Sun & PH
 
 [Woodlands] Acumed Medical Group (Woodlands)
   Address: 111 Woodlands, Street 13, #01-78, Singapore 730111

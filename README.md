@@ -34,7 +34,7 @@ The clinic finder provides:
 
 ## Data source
 
-Clinic data is derived from the official Participating PaedsENGAGE Clinics PDF marked accurate as of 22 Jun 2026.
+Clinic data is derived from the official Participating PaedsENGAGE Clinics PDF marked accurate as of 20 Jul 2026.
 
 Always verify clinic availability, doctor schedules, and opening hours directly with the clinic before visiting.
 
