@@ -2,8 +2,10 @@
 from __future__ import annotations
 
 import csv
+import argparse
 import json
 import re
+import shutil
 import subprocess
 import sys
 from collections import defaultdict
@@ -17,12 +19,13 @@ import pdfplumber
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "data"
-PDF_PATH = DATA_DIR / "paedsengage-clinics-2026-05-25.pdf"
-TEXT_PATH = DATA_DIR / "paedsengage-clinics-2026-05-25.txt"
+PDF_PATH = DATA_DIR / "paedsengage-clinics.pdf"
+TEXT_PATH = DATA_DIR / "paedsengage-clinics.txt"
 OUTPUT_JSON = DATA_DIR / "clinics.json"
 OUTPUT_CLINICS_CSV = DATA_DIR / "clinics.csv"
 OUTPUT_HOURS_CSV = DATA_DIR / "clinic_hours.csv"
 OUTPUT_BLOCKS_CSV = DATA_DIR / "clinic_hours_blocks.csv"
+SITE_DATA_DIR: Path | None = None
 
 DAY_ORDER = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun", "PH"]
 DAY_INDEX = {day: i for i, day in enumerate(DAY_ORDER)}
@@ -123,11 +126,10 @@ def clean_join(parts: Iterable[str], separator: str = ", ") -> str:
 
 
 def extract_locations(pdf: pdfplumber.PDF) -> list[str]:
-    try:
+    if shutil.which("pdftotext"):
         text = subprocess.check_output(["pdftotext", "-layout", str(PDF_PATH), "-"], text=True)
-    except FileNotFoundError:
-        page_text = [page.extract_text(layout=True) or "" for page in pdf.pages[:3]]
-        text = "\n".join(page_text)
+    else:
+        text = "\n".join((page.extract_text(layout=True) or "") for page in pdf.pages[:4])
     locations: list[str] = []
     for line in text.splitlines()[:140]:
         m = TOC_RE.match(line)
@@ -403,6 +405,7 @@ def write_text_dump(clinics: list[dict]) -> None:
 
 
 def write_outputs(clinics: list[dict]) -> None:
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
     OUTPUT_JSON.write_text(json.dumps(clinics, indent=2, ensure_ascii=False), encoding="utf-8")
     write_text_dump(clinics)
 
@@ -466,8 +469,29 @@ def write_outputs(clinics: list[dict]) -> None:
                 for block in day["time_blocks"]:
                     writer.writerow({"location": clinic["location"], "clinic_name": clinic["clinic_name"], "day": day["day"], **block})
 
+    if SITE_DATA_DIR:
+        SITE_DATA_DIR.mkdir(parents=True, exist_ok=True)
+        (SITE_DATA_DIR / "clinics.json").write_text(json.dumps(clinics, indent=2, ensure_ascii=False), encoding="utf-8")
+
 
 def main() -> int:
+    global DATA_DIR, PDF_PATH, TEXT_PATH, OUTPUT_JSON, OUTPUT_CLINICS_CSV, OUTPUT_HOURS_CSV, OUTPUT_BLOCKS_CSV, SITE_DATA_DIR
+
+    parser = argparse.ArgumentParser(description="Parse the PaedsENGAGE clinic PDF into JSON and CSV tables.")
+    parser.add_argument("--pdf", type=Path, default=PDF_PATH, help="Path to the PaedsENGAGE PDF.")
+    parser.add_argument("--out-dir", type=Path, default=DATA_DIR, help="Directory for clinics.json/csv outputs.")
+    parser.add_argument("--site-data-dir", type=Path, default=None, help="Optional site/data directory to receive clinics.json.")
+    args = parser.parse_args()
+
+    DATA_DIR = args.out_dir.resolve()
+    PDF_PATH = args.pdf.resolve()
+    TEXT_PATH = DATA_DIR / f"{PDF_PATH.stem}.txt"
+    OUTPUT_JSON = DATA_DIR / "clinics.json"
+    OUTPUT_CLINICS_CSV = DATA_DIR / "clinics.csv"
+    OUTPUT_HOURS_CSV = DATA_DIR / "clinic_hours.csv"
+    OUTPUT_BLOCKS_CSV = DATA_DIR / "clinic_hours_blocks.csv"
+    SITE_DATA_DIR = args.site_data_dir.resolve() if args.site_data_dir else None
+
     if not PDF_PATH.exists():
         print(f"Missing PDF: {PDF_PATH}", file=sys.stderr)
         return 1
